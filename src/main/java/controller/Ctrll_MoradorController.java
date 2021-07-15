@@ -56,6 +56,8 @@ public class Ctrll_MoradorController implements Initializable {
     @FXML
     private TextField tipo_morador;
     @FXML
+    private TextField nascimento_morador;
+    @FXML
     private Button btnBuscar;
     
     
@@ -74,7 +76,8 @@ public class Ctrll_MoradorController implements Initializable {
                 morador.setId(rs.getInt(1));
                 morador.setCpf(rs.getString(2)); // retorna o CPF
                 morador.setNome_completo(rs.getString(3)); // Retorna o nome completo
-                morador.setDataNascimento(rs.getString(4).toString()); // retorna a data de nascimento;;
+                System.out.println(rs.getDate(4).toString());
+                morador.setDataNascimento(rs.getDate(4).toString()); // retorna a data de nascimento;;
                 morador.setNumCasa(rs.getInt(5)); // retornao numero da casa do morador
                 Pessoa.sexo sex;
                 if(rs.getString(6).equals("Masculino")){ // retorna o sexo do morador
@@ -96,6 +99,8 @@ public class Ctrll_MoradorController implements Initializable {
                 cpf_morador.setText(morador.getCpf());
                 casa_morador.setText(String.valueOf(morador.getNumCasa()));
                 tipo_morador.setText(rs.getString(7));
+                String nascimento = rs.getDate(4).toString();
+                nascimento_morador.setText(nascimento);
 
 
             }
@@ -113,7 +118,7 @@ public class Ctrll_MoradorController implements Initializable {
     public void Cadastrar(){
         System.out.println("BOTAO CADASTRAR PRESSIONADO!");
     }
-    public void deletar(){
+    public void Deletar(){
         System.out.println("BOTAO DELETAR PRESSIONADO!");
     }
     

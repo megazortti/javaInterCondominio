@@ -29,27 +29,33 @@
             <Font size="21.0" />
          </font>
       </Label>
-      <TextField fx:id="nome_morador" editable="false" layoutX="735.0" layoutY="241.0" prefHeight="25.0" prefWidth="115.0" />
+      <TextField fx:id="nome_morador" layoutX="735.0" layoutY="241.0" prefHeight="25.0" prefWidth="115.0" />
       <Label layoutX="611.0" layoutY="294.0" text="CPF" textFill="WHITE">
          <font>
             <Font size="21.0" />
          </font>
       </Label>
-      <TextField fx:id="cpf_morador" editable="false" layoutX="735.0" layoutY="299.0" prefHeight="25.0" prefWidth="115.0" />
-      <TextField fx:id="casa_morador" editable="false" layoutX="735.0" layoutY="352.0" prefHeight="25.0" prefWidth="115.0" />
+      <TextField fx:id="cpf_morador" layoutX="735.0" layoutY="299.0" prefHeight="25.0" prefWidth="115.0" />
+      <TextField fx:id="casa_morador" layoutX="735.0" layoutY="352.0" prefHeight="25.0" prefWidth="115.0" />
       <Label layoutX="604.0" layoutY="349.0" text="CASA" textFill="WHITE">
          <font>
             <Font size="21.0" />
          </font>
       </Label>
-      <Label layoutX="552.0" layoutY="406.0" text="TIPO MORADOR" textFill="WHITE">
+      <Label layoutX="552.0" layoutY="447.0" text="TIPO MORADOR" textFill="WHITE">
          <font>
             <Font size="21.0" />
          </font>
       </Label>
-      <TextField fx:id="tipo_morador" editable="false" layoutX="735.0" layoutY="409.0" prefHeight="25.0" prefWidth="115.0" />
+      <TextField fx:id="tipo_morador" layoutX="735.0" layoutY="450.0" prefHeight="25.0" prefWidth="115.0" />
       <Button fx:id="btnBuscar" defaultButton="true" layoutX="793.0" layoutY="71.0" mnemonicParsing="false" onAction="#Buscar" prefHeight="25.0" prefWidth="52.0" style="-fx-background-color: #2b8eff;" text="Buscar" textFill="WHITE" />
       <Button fx:id="btnCadastrar" defaultButton="true" layoutX="586.0" layoutY="535.0" mnemonicParsing="false" onAction="#Cadastrar" prefHeight="25.0" prefWidth="92.0" style="-fx-background-color: #2b8eff;" text="Cadastrar" textFill="WHITE" />
       <Button fx:id="btnDeletar" defaultButton="true" layoutX="732.0" layoutY="535.0" mnemonicParsing="false" onAction="#Deletar" prefHeight="25.0" prefWidth="92.0" style="-fx-background-color: #2b8eff;" text="Deletar" textFill="WHITE" />
+      <TextField fx:id="nascimento_morador" layoutX="736.0" layoutY="403.0" prefHeight="25.0" prefWidth="115.0" />
+      <Label layoutX="566.0" layoutY="400.0" text="NASCIMENTO" textFill="WHITE">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
