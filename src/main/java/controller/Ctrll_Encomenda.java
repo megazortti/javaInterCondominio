@@ -21,9 +21,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import model.Entrega;
-import model.Pessoa;
-import model.Porteiro;
+import model.database.CadastrarEncomenda;
 import model.database.ConnectionBD;
+import model.database.EncomendaEntregue;
 
 /**
  * FXML Controller class
@@ -137,10 +137,30 @@ public class Ctrll_Encomenda implements Initializable {
     @FXML
     public void Cadastrar() {
         System.out.print("Cadastro");
+        Entrega encomenda = new Entrega();
+        
+        encomenda.setIdObjeto(Integer.parseInt(id_encomenda.getText()));
+        encomenda.setIdPorteiroRecebeu(Integer.parseInt(porteiroRecebeu.getText()));
+        //encomenda.setIdPorteiroEntregou(rs.getInt(3));
+        encomenda.setDataRecebido(dataRecebidoEncomenda.getText());
+        //encomenda.setDataEntrega(rs.getDate(5).toString());
+        encomenda.setDonoEncomenda(donoEncomenda.getText());
+        encomenda.setNumeroCasa(Integer.parseInt(numero_casa.getText()));
+        
+        
+        CadastrarEncomenda ce = new CadastrarEncomenda(encomenda);
+        iniciar_lista();
     }
     
     @FXML
     public void Entregue() {
         System.out.print("Entregue");
+        Entrega encomenda = new Entrega();
+        encomenda.setIdPorteiroEntregou(Integer.parseInt(porteiroEntregou.getText()));
+        encomenda.setDataRecebido(dataEntregaEncomenda.getText());
+      
+        
+        EncomendaEntregue ee = new EncomendaEntregue(encomenda);
+        iniciar_lista();
     }
 }
