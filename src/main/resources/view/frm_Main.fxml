@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Ctrll_Main">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#273c75" height="400.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
+      <PieChart fx:id="pieChart" layoutX="40.0" layoutY="61.0" prefHeight="306.0" prefWidth="521.0" stylesheets="@css/frm_Main.css" />
+      <Button fx:id="btnCadastrarMorador" defaultButton="true" layoutX="16.0" layoutY="14.0" mnemonicParsing="false" onAction="#iniciar_morador" prefHeight="27.0" prefWidth="123.0" style="-fx-background-color: #2b8eff;" text="Morador" textFill="WHITE" />
+      <Button fx:id="btnCadastrarPorteiro" defaultButton="true" layoutX="163.0" layoutY="14.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="123.0" style="-fx-background-color: #2b8eff;" text="Casa" textFill="WHITE" />
+      <Button fx:id="btnCadastrarPorteiro1" defaultButton="true" layoutX="311.0" layoutY="14.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="123.0" style="-fx-background-color: #2b8eff;" text="Porteiro" textFill="WHITE" />
+      <Button fx:id="btnCadastrarPorteiro11" defaultButton="true" layoutX="458.0" layoutY="14.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="123.0" style="-fx-background-color: #2b8eff;" text="Encomenda" textFill="WHITE" />
+   </children>
+</AnchorPane>

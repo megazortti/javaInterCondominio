@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.web.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="511.0" maxWidth="749.0" minHeight="511.0" minWidth="749.0" prefHeight="511.0" prefWidth="749.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Ctrll_Login">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#2f3640" height="511.0" stroke="BLACK" strokeType="INSIDE" width="377.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#273c75" height="511.0" layoutX="372.0" stroke="BLACK" strokeType="INSIDE" width="377.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="372.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <Label layoutX="426.0" layoutY="71.0" prefHeight="36.0" prefWidth="270.0" text="Entre em sua conta" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="30.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tf_Cpf" layoutX="481.0" layoutY="198.0" prefHeight="25.0" prefWidth="215.0" promptText="Digite o seu CPF" />
+      <Label layoutX="416.0" layoutY="200.0" prefHeight="21.0" prefWidth="40.0" text="CPF" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="408.0" layoutY="240.0" prefHeight="21.0" prefWidth="57.0" text="Senha" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="35.0" layoutY="194.0" text="Se você ainda não tem uma conta" textFill="WHITE">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <Button layoutX="141.0" layoutY="263.0" mnemonicParsing="false" style="-fx-background-color: #273c75;" text="Clique aqui" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="15.0" />
+         </font>
+      </Button>
+      <PasswordField fx:id="tf_Senha" layoutX="481.0" layoutY="238.0" prefHeight="25.0" prefWidth="215.0" promptText="Digite sua senha" />
+      <Button fx:id="btn_Logar" defaultButton="true" layoutX="539.0" layoutY="290.0" mnemonicParsing="false" onAction="#logar" prefHeight="27.0" prefWidth="83.0" style="-fx-background-color: #2b8eff;" text="Entrar" textFill="WHITE" />
+   </children>
+</AnchorPane>
