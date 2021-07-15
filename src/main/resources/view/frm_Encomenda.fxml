@@ -1,11 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="intercondo.Controllers.Ctrll_Encomenda">
-    
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="intercondo.Controllers.Ctrll_Encomenda">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#273c75" height="400.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
+      <ListView layoutX="14.0" layoutY="14.0" prefHeight="371.0" prefWidth="288.0" />
+      <Label layoutX="372.0" layoutY="26.0" text="Buscar Encomenda" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="352.0" layoutY="67.0" text="ID" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <TextField layoutX="381.0" layoutY="70.0" prefHeight="25.0" prefWidth="114.0" />
+      <Button fx:id="btnBuscar" defaultButton="true" layoutX="519.0" layoutY="70.0" mnemonicParsing="false" onAction="#Buscar" prefHeight="25.0" prefWidth="52.0" style="-fx-background-color: #2b8eff;" text="Buscar" textFill="WHITE" />
+      <Button fx:id="btnEntregue" defaultButton="true" layoutX="481.0" layoutY="344.0" mnemonicParsing="false" onAction="#Entregue" prefHeight="25.0" prefWidth="76.0" style="-fx-background-color: #2b8eff;" text="Entregue" textFill="WHITE" />
+      <Button fx:id="btnCadastrar" defaultButton="true" layoutX="362.0" layoutY="344.0" mnemonicParsing="false" onAction="#Cadastrar" prefHeight="25.0" prefWidth="76.0" style="-fx-background-color: #2b8eff;" text="Cadastrar" textFill="WHITE" />
+      <Label layoutX="321.0" layoutY="141.0" prefHeight="26.0" prefWidth="114.0" text="Porteiro Recebeu" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="PorteiroRecebeu" layoutX="454.0" layoutY="142.0" prefHeight="25.0" prefWidth="114.0" />
+      <TextField fx:id="PorteiroEntregou" layoutX="453.0" layoutY="217.0" prefHeight="25.0" prefWidth="114.0" />
+      <Label layoutX="320.0" layoutY="216.0" prefHeight="26.0" prefWidth="122.0" text="Porteiro Entregou" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="dataRecebidoEncomenda" layoutX="453.0" layoutY="181.0" prefHeight="25.0" prefWidth="114.0" />
+      <Label layoutX="320.0" layoutY="180.0" prefHeight="26.0" prefWidth="114.0" text="Data Recebido" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="dataEntregaEncomenda" layoutX="453.0" layoutY="252.0" prefHeight="25.0" prefWidth="114.0" />
+      <Label layoutX="320.0" layoutY="251.0" prefHeight="26.0" prefWidth="114.0" text="Data Entregue" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+   </children>
 </AnchorPane>
