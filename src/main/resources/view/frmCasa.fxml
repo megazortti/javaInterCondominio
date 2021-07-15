@@ -12,7 +12,7 @@
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="controller.Ctrll_Casa">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#273c75" height="406.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
-      <ListView layoutX="14.0" layoutY="14.0" prefHeight="383.0" prefWidth="295.0" />
+      <ListView fx:id="lista" layoutX="14.0" layoutY="14.0" prefHeight="383.0" prefWidth="295.0" />
       <Label layoutX="393.0" layoutY="22.0" prefHeight="31.0" prefWidth="116.0" text="Buscar Casa" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="21.0" />
@@ -23,15 +23,15 @@
             <Font size="21.0" />
          </font>
       </Label>
-      <TextField layoutX="393.0" layoutY="68.0" prefHeight="25.0" prefWidth="81.0" />
+      <TextField fx:id="num_casa" layoutX="393.0" layoutY="68.0" prefHeight="25.0" prefWidth="81.0" />
       <Button fx:id="btnBuscar" defaultButton="true" layoutX="509.0" layoutY="68.0" mnemonicParsing="false" onAction="#Buscar" prefHeight="25.0" prefWidth="52.0" style="-fx-background-color: #2b8eff;" text="Buscar" textFill="WHITE" />
       <Label layoutX="340.0" layoutY="158.0" prefHeight="31.0" prefWidth="94.0" text="Proprietario" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField layoutX="444.0" layoutY="161.0" prefHeight="25.0" prefWidth="81.0" />
-      <Button fx:id="btnBuscar1" defaultButton="true" layoutX="368.0" layoutY="337.0" mnemonicParsing="false" onAction="#Buscar" prefHeight="25.0" prefWidth="67.0" style="-fx-background-color: #2b8eff;" text="Cadastrar" textFill="WHITE" />
-      <Button fx:id="btnBuscar2" defaultButton="true" layoutX="474.0" layoutY="337.0" mnemonicParsing="false" onAction="#Buscar" prefHeight="25.0" prefWidth="67.0" style="-fx-background-color: #2b8eff;" text="Deletar" textFill="WHITE" />
+      <TextField fx:id="proprietario_casa" layoutX="444.0" layoutY="161.0" prefHeight="25.0" prefWidth="81.0" />
+      <Button fx:id="btnCadastrar" defaultButton="true" layoutX="368.0" layoutY="337.0" mnemonicParsing="false" onAction="#Cadastrar" prefHeight="25.0" prefWidth="67.0" style="-fx-background-color: #2b8eff;" text="Cadastrar" textFill="WHITE" />
+      <Button fx:id="btnDeletar" defaultButton="true" layoutX="474.0" layoutY="337.0" mnemonicParsing="false" onAction="#Deletar" prefHeight="25.0" prefWidth="67.0" style="-fx-background-color: #2b8eff;" text="Deletar" textFill="WHITE" />
    </children>
 </AnchorPane>
