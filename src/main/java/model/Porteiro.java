@@ -13,11 +13,14 @@ public class Porteiro extends Pessoa{
     private int idPorteiro;
     private String dataNascimento;
     private String senha;
+    private String cpf;
 	
+    @Override
     public String getDataNascimento() {
         return dataNascimento;
     }
 
+    @Override
     public void setDataNascimento(String dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
@@ -42,5 +45,19 @@ public class Porteiro extends Pessoa{
      */
     public void setIdPorteiro(int idPorteiro) {
         this.idPorteiro = idPorteiro;
+    }
+
+    /**
+     * @return the cpf
+     */
+    public String getCpf() {
+        return cpf;
+    }
+
+    /**
+     * @param cpf the cpf to set
+     */
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
 }
