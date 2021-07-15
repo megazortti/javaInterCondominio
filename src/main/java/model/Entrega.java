@@ -10,40 +10,43 @@ package model;
  * @author biaca
  */
 public class Entrega {
-    private int idMorador;
-    private int idPorteiro;
+    private String donoEncomenda;
+    private int numeroCasa;
+    private int idPorteiroRecebeu;
+    private int idPorteiroEntregou;
     private int idObjeto;
     private String dataEntrega;
     private String dataRecebido;
 
     /**
-     * @return the idMorador
+     * @return the donoEncomenda
      */
-    public int getIdMorador() {
-        return idMorador;
+    public String getDonoEncomenda() {
+        return donoEncomenda;
     }
 
     /**
-     * @param idMorador the idMorador to set
+     * @param donoEncomenda the donoEncomenda to set
      */
-    public void setIdMorador(int idMorador) {
-        this.idMorador = idMorador;
+    public void setDonoEncomenda(String donoEncomenda) {
+        this.donoEncomenda = donoEncomenda;
     }
 
     /**
-     * @return the idPorteiro
+     * @return the numeroCasa
      */
-    public int getIdPorteiro() {
-        return idPorteiro;
+    public int getNumeroCasa() {
+        return numeroCasa;
     }
 
     /**
-     * @param idPorteiro the idPorteiro to set
+     * @param numeroCasa the numeroCasa to set
      */
-    public void setIdPorteiro(int idPorteiro) {
-        this.idPorteiro = idPorteiro;
+    public void setNumeroCasa(int numeroCasa) {
+        this.numeroCasa = numeroCasa;
     }
 
+   
     /**
      * @return the idObjeto
      */
@@ -85,4 +88,33 @@ public class Entrega {
     public void setDataRecebido(String dataRecebido) {
         this.dataRecebido = dataRecebido;
     }
+
+    /**
+     * @return the idPorteiroRecebeu
+     */
+    public int getIdPorteiroRecebeu() {
+        return idPorteiroRecebeu;
+    }
+
+    /**
+     * @param idPorteiroRecebeu the idPorteiroRecebeu to set
+     */
+    public void setIdPorteiroRecebeu(int idPorteiroRecebeu) {
+        this.idPorteiroRecebeu = idPorteiroRecebeu;
+    }
+
+    /**
+     * @return the idPorteiroEntregou
+     */
+    public int getIdPorteiroEntregou() {
+        return idPorteiroEntregou;
+    }
+
+    /**
+     * @param idPorteiroEntregou the idPorteiroEntregou to set
+     */
+    public void setIdPorteiroEntregou(int idPorteiroEntregou) {
+        this.idPorteiroEntregou = idPorteiroEntregou;
+    }
+ 
 }
