@@ -23,7 +23,9 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import model.Pessoa;
 import model.Porteiro;
+import model.database.CadastrarMorador;
 import model.database.ConnectionBD;
+import model.database.CadastrarPorteiro;
 
 /**
  * FXML Controller class
@@ -48,49 +50,57 @@ public class Ctrll_Porteiro implements Initializable {
     private TextField nascimento_porteiro;
     @FXML
     private Button btnBuscar;
+    @FXML
+    private TextField sexo_porteiro;
+        
+    public void iniciar_formulario(){
+        obsList.clear();
+        Porteiro porteiro = new Porteiro();
+            ConnectionBD bd = new ConnectionBD(); // 
+
+            try{
+                Class.forName("com.mysql.jdbc.Driver");
+                Connection conn = DriverManager.getConnection(bd.url,bd.user,bd.pass);
+                System.out.println(conn);
+                Statement selectStmt = conn.createStatement();
+                bd.state="Connected"; // se chegou aqui, é porque a conexão obteve sucesso.
+                String _query = String.format("SELECT * FROM porteiro");
+                ResultSet rs = selectStmt.executeQuery(_query);
+                while(rs.next()) //
+                {
+                    porteiro.setIdPorteiro(rs.getInt(1));
+                    porteiro.setCpf(rs.getString(2)); // retorna o CPF
+                    porteiro.setNome_completo(rs.getString(3)); // Retorna o nome completo
+                    porteiro.setDataNascimento(rs.getString(4).toString()); // retorna a data de nascimento;;
+                    Pessoa.sexo sex;
+                    if(rs.getString(5).equals("Masculino")){ // retorna o sexo do morador
+                        sex=Pessoa.sexo.Masculino;
+                    }else{
+                        sex=Pessoa.sexo.Feminino;
+                    }
+                    porteiro.setSexo(sex);
+
+                    obsList.add("|"+porteiro.getIdPorteiro() + "| -> " + porteiro.getNome_completo());
+
+
+                }
+
+
+            } catch (SQLException ex) {
+                Logger.getLogger(ConnectionBD.class.getName()).log(Level.SEVERE, null, ex);
+                bd.state="Unconnected";
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(Ctrll_MoradorController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+            lista.getItems().addAll(obsList);
+            System.out.println("FORM PORTEIRO INICIALIZADO!");
+    }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        Porteiro porteiro = new Porteiro();
-        ConnectionBD bd = new ConnectionBD(); // 
+        iniciar_formulario();
         
-        try{
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection(bd.url,bd.user,bd.pass);
-            System.out.println(conn);
-            Statement selectStmt = conn.createStatement();
-            bd.state="Connected"; // se chegou aqui, é porque a conexão obteve sucesso.
-            String _query = String.format("SELECT * FROM porteiro");
-            ResultSet rs = selectStmt.executeQuery(_query);
-            while(rs.next()) //
-            {
-                porteiro.setIdPorteiro(rs.getInt(1));
-                porteiro.setCpf(rs.getString(2)); // retorna o CPF
-                porteiro.setNome_completo(rs.getString(3)); // Retorna o nome completo
-                porteiro.setDataNascimento(rs.getString(4).toString()); // retorna a data de nascimento;;
-                Pessoa.sexo sex;
-                if(rs.getString(5).equals("Masculino")){ // retorna o sexo do morador
-                    sex=Pessoa.sexo.Masculino;
-                }else{
-                    sex=Pessoa.sexo.Feminino;
-                }
-                porteiro.setSexo(sex);
-                
-                obsList.add("|"+porteiro.getIdPorteiro() + "| -> " + porteiro.getNome_completo());
-
-
-            }
-            
-           
-        } catch (SQLException ex) {
-            Logger.getLogger(ConnectionBD.class.getName()).log(Level.SEVERE, null, ex);
-            bd.state="Unconnected";
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Ctrll_MoradorController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-        lista.getItems().addAll(obsList);
-        System.out.println("FORM PORTEIRO INICIALIZADO!");
     }
     
 
@@ -118,11 +128,11 @@ public class Ctrll_Porteiro implements Initializable {
                     sex=Pessoa.sexo.Feminino;
                 }
                 porteiro.setSexo(sex);
-                
                 nome_porteiro.setText(porteiro.getNome_completo());
                 cpf_porteiro.setText(porteiro.getCpf());
                 String nascimento = rs.getDate(4).toString();
                 nascimento_porteiro.setText(nascimento);
+                sexo_porteiro.setText(porteiro.getSexo());
 
             }
             
@@ -134,14 +144,32 @@ public class Ctrll_Porteiro implements Initializable {
         }
     }
     
+    
+    
     @FXML
     public void Cadastrar() {
         System.out.print("Cadastro");
+        Porteiro p = new Porteiro();
+        p.setCpf(cpf_porteiro.getText());
+        p.setNome_completo(nome_porteiro.getText());
+        p.setDataNascimento(nascimento_porteiro.getText());
+        if(sexo_porteiro.getText().toLowerCase() == "masculino"){
+            p.setSexo(Pessoa.sexo.Masculino);
+        }else{
+            p.setSexo(Pessoa.sexo.Feminino);
+        }
+        
+        
+        CadastrarPorteiro cp = new CadastrarPorteiro(p);
+        iniciar_formulario();
+        
+        
     }
     
     @FXML
     public void Deletar() {
         System.out.print("Deleçao");
     }
+
     
 }

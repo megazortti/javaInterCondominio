@@ -44,5 +44,11 @@
             <Font size="17.0" />
          </font>
       </Label>
+      <TextField fx:id="sexo_porteiro" layoutX="456.0" layoutY="242.0" prefHeight="25.0" prefWidth="105.0" />
+      <Label layoutX="322.0" layoutY="242.0" prefHeight="26.0" prefWidth="112.0" text="SEXO" textFill="WHITE">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

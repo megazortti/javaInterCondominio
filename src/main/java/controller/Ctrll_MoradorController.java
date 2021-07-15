@@ -121,12 +121,14 @@ public class Ctrll_MoradorController implements Initializable {
     
     @FXML
     public void Cadastrar(){
+        System.out.println(sexo_morador.getText());
         Morador m = new Morador();
         m.setNome_completo(nome_morador.getText());
         m.setCpf(cpf_morador.getText());
         m.setNumCasa(Integer.parseInt(casa_morador.getText()));
         m.setTipoMorador(tipo_morador.getText());
         m.setDataNascimento(nascimento_morador.getText());
+        System.out.println(sexo_morador.getText());
         if(sexo_morador.getText().toLowerCase() == "masculino"){
             m.setSexo(Pessoa.sexo.Masculino);
         }else{
@@ -135,18 +137,34 @@ public class Ctrll_MoradorController implements Initializable {
         CadastrarMorador cm = new CadastrarMorador(m);
 
         System.out.println("BOTAO CADASTRAR PRESSIONADO!");
+        iniciar_lista();
     }
     public void Deletar(){
-        System.out.println("BOTAO DELETAR PRESSIONADO!");
-    }
-    
-    @Override
-
-    public void initialize(URL url, ResourceBundle rb) {
-       
         Morador morador = new Morador();
         ConnectionBD bd = new ConnectionBD(); // 
         
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection conn = DriverManager.getConnection(bd.url,bd.user,bd.pass);
+            System.out.println(conn);
+            Statement selectStmt = conn.createStatement();
+            bd.state="Connected"; // se chegou aqui, é porque a conexão obteve sucesso.
+            String _query = String.format("DELETE FROM morador WHERE id_morador = '%s'",id_morador.getText());
+            selectStmt.execute(_query);
+            iniciar_lista();
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(ConnectionBD.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Ctrll_MoradorController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
+    public void iniciar_lista(){
+        Morador morador = new Morador();
+        ConnectionBD bd = new ConnectionBD(); // 
+        obsList.clear();
+        lista.getItems().clear();
         try{
             Class.forName("com.mysql.jdbc.Driver");
             Connection conn = DriverManager.getConnection(bd.url,bd.user,bd.pass);
@@ -180,7 +198,6 @@ public class Ctrll_MoradorController implements Initializable {
                 }
                 obsList.add("|"+morador.getId() + "| -> " + morador.getNome_completo());
 
-
             }
             
            
@@ -193,6 +210,14 @@ public class Ctrll_MoradorController implements Initializable {
 
         lista.getItems().addAll(obsList);
         System.out.println("FORM MORADOR INICIALIZADO!");
-    }    
+    }
     
+    
+    @Override
+
+    
+    public void initialize(URL url, ResourceBundle rb) {
+       iniciar_lista();
+    }
+        
 }
