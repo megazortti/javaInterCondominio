@@ -12,6 +12,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.fxml.FXML;
 import model.Porteiro;
 import model.database.ConnectionBD;
 
@@ -33,8 +34,9 @@ public class Get_Porteiro {
             {
                 porteiro.setCpf(rs.getString(1)); // retorna o CPF
                 porteiro.setNome_completo(rs.getString(2)); // Retorna o nome completo
-                porteiro.setSenha(rs.getString(3)); // Retorna a senha do Porteiro
-                porteiro.setDataNascimento(rs.getString(4)); // retorna a data de nascimento
+                porteiro.setDataNascimento(rs.getString(3)); // retorna a data de nascimento
+                porteiro.setSenha(rs.getString(4)); // Retorna a senha do Porteiro
+
                 this.state="Logged";
             }else{
                 this.state="Unlogged";

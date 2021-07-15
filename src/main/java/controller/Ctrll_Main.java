@@ -42,13 +42,22 @@ public class Ctrll_Main implements Initializable {
         Scene scene = new Scene(root);  
         stage.setTitle("InterCondomínio - Morador");
         stage.setScene(scene);
-        Stage actualStage = (Stage) pieChart.getScene().getWindow(); // Apenas pegando a cena atual..
-        actualStage.close();
+//        Stage actualStage = (Stage) pieChart.getScene().getWindow(); // Apenas pegando a cena atual..
+//        actualStage.close();
         stage.show();
     }
-    
-    
-    
+    @FXML
+    private void iniciar_porteiro() throws IOException{
+        Stage stage = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("/view/frm_Porteiro.fxml"));
+        Scene scene = new Scene(root);  
+        stage.setTitle("InterCondomínio - Porteiro");
+        stage.setScene(scene);
+//        Stage actualStage = (Stage) pieChart.getScene().getWindow(); // Apenas pegando a cena atual..;;
+//        actualStage.close();
+        stage.show();
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         PieChartModel pcc = new PieChartModel();
