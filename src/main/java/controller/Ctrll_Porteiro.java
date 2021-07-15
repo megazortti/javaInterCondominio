@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package intercondo.Controllers;
+package controller;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -14,7 +14,7 @@ import javafx.fxml.Initializable;
  *
  * @author biaca
  */
-public class Ctrll_CadastroPorteiro implements Initializable {
+public class Ctrll_Porteiro implements Initializable {
 
     /**
      * Initializes the controller class.
@@ -22,6 +22,21 @@ public class Ctrll_CadastroPorteiro implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }
+
+    @FXML
+    public void Buscar() {
+        System.out.print("Busca");
+    }
+    
+    @FXML
+    public void Cadastrar() {
+        System.out.print("Cadastro");
+    }
+    
+    @FXML
+    public void Deletar() {
+        System.out.print("Deleçao");
+    }
     
 }

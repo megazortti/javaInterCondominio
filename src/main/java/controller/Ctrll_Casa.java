@@ -7,6 +7,7 @@ package controller;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
 /**
@@ -22,6 +23,21 @@ public class Ctrll_Casa implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }   
+    
+    @FXML
+    public void Buscar() {
+        System.out.print("Busca");
+    }
+    
+    @FXML
+    public void Cadastrar() {
+        System.out.print("Cadastro");
+    }
+    
+    @FXML
+    public void Deletar() {
+        System.out.print("Deleçao");
+    }
     
 }

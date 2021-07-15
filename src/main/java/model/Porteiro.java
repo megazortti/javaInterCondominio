@@ -10,6 +10,7 @@ package model;
  * @author biaca
  */
 public class Porteiro extends Pessoa{
+    private int idPorteiro;
     private String dataNascimento;
     private String senha;
 	
@@ -27,5 +28,19 @@ public class Porteiro extends Pessoa{
 
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+
+    /**
+     * @return the idPorteiro
+     */
+    public int getIdPorteiro() {
+        return idPorteiro;
+    }
+
+    /**
+     * @param idPorteiro the idPorteiro to set
+     */
+    public void setIdPorteiro(int idPorteiro) {
+        this.idPorteiro = idPorteiro;
     }
 }

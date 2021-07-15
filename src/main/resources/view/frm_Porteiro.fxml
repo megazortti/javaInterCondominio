@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="intercondo.Controllers.Ctrll_CadastroFuncionario">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#273c75" height="400.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
+      <ListView layoutX="14.0" layoutY="14.0" prefHeight="376.0" prefWidth="294.0" />
+      <Label layoutX="379.0" layoutY="26.0" text="Buscar Porteiro" textFill="WHITE">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="345.0" layoutY="69.0" text="ID" textFill="WHITE">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <TextField fx:id="id_porteiro" layoutX="387.0" layoutY="70.0" prefHeight="25.0" prefWidth="105.0" />
+      <Button fx:id="btnBuscar" defaultButton="true" layoutX="520.0" layoutY="71.0" mnemonicParsing="false" onAction="#Buscar" prefHeight="25.0" prefWidth="52.0" style="-fx-background-color: #2b8eff;" text="Buscar" textFill="WHITE" />
+      <Label layoutX="322.0" layoutY="168.0" prefHeight="26.0" prefWidth="98.0" text="Nascimento" textFill="WHITE">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <TextField fx:id="nascimento_porteiro" layoutX="440.0" layoutY="169.0" prefHeight="25.0" prefWidth="105.0" />
+      <Button fx:id="btnDeletar" defaultButton="true" layoutX="466.0" layoutY="344.0" mnemonicParsing="false" onAction="#Deletar" prefHeight="25.0" prefWidth="87.0" style="-fx-background-color: #2b8eff;" text="Deletar" textFill="WHITE" />
+      <Button fx:id="btnCadastrar" defaultButton="true" layoutX="344.0" layoutY="344.0" mnemonicParsing="false" onAction="#Cadastrar" prefHeight="25.0" prefWidth="87.0" style="-fx-background-color: #2b8eff;" text="Cadastrar" textFill="WHITE" />
+   </children>
+</AnchorPane>
