@@ -29,6 +29,7 @@ import model.Morador;
 import model.Pessoa;
 import model._Morador;
 import model.database.ConnectionBD;
+import model.database.CadastrarMorador;
 
 /**
  * FXML Controller class
@@ -57,8 +58,12 @@ public class Ctrll_MoradorController implements Initializable {
     private TextField tipo_morador;
     @FXML
     private TextField nascimento_morador;
+    
     @FXML
-    private Button btnBuscar;
+    private TextField sexo_morador;
+    
+    
+    
     
     
     public void Buscar(){
@@ -116,6 +121,19 @@ public class Ctrll_MoradorController implements Initializable {
     
     @FXML
     public void Cadastrar(){
+        Morador m = new Morador();
+        m.setNome_completo(nome_morador.getText());
+        m.setCpf(cpf_morador.getText());
+        m.setNumCasa(Integer.parseInt(casa_morador.getText()));
+        m.setTipoMorador(tipo_morador.getText());
+        m.setDataNascimento(nascimento_morador.getText());
+        if(sexo_morador.getText().toLowerCase() == "masculino"){
+            m.setSexo(Pessoa.sexo.Masculino);
+        }else{
+            m.setSexo(Pessoa.sexo.Feminino);
+        }
+        CadastrarMorador cm = new CadastrarMorador(m);
+
         System.out.println("BOTAO CADASTRAR PRESSIONADO!");
     }
     public void Deletar(){

@@ -31,8 +31,8 @@ public class Pessoa {
 	public void setDataNascimento(String dataNascimento) {
             this.dataNascimento = dataNascimento;
 	}
-        public sexo getSexo(){
-            return this.currentSexo;
+        public String getSexo(){
+            return this.currentSexo.toString();
         }
         public void setSexo(sexo sex){
             this.currentSexo = sex;

@@ -103,9 +103,9 @@ public class Ctrll_Porteiro implements Initializable {
             Connection conn = DriverManager.getConnection(bd.url,bd.user,bd.pass);
             System.out.println(conn);
             Statement selectStmt = conn.createStatement();
-            String _query = String.format("SELECT * FROM porteiro WHERE id_porteiro = %s", id_porteiro.getText());
+            String _query = String.format("SELECT * FROM porteiro WHERE id_porteiro = '%s'", id_porteiro.getText());
             ResultSet rs = selectStmt.executeQuery(_query);
-            while(rs.next()) //
+            if(rs.next()) //
             {
                 porteiro.setIdPorteiro(rs.getInt(1));
                 porteiro.setCpf(rs.getString(2)); // retorna o CPF

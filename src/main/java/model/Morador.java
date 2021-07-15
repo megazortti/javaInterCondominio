@@ -7,6 +7,7 @@ public class Morador extends Pessoa{
 	public enum tipoMorador{
 		Proprietário, Morador, Inquilino;
 	}
+        public tipoMorador tipo_morador;
 	
 	public String getDataNascimento() {
 		return dataNascimento;
@@ -26,6 +27,18 @@ public class Morador extends Pessoa{
         }
         public int getId(){
             return this.id;
+        }
+        public void setTipoMorador(String _tipoMorador){
+            if(_tipoMorador == "Proprietário"){
+                this.tipo_morador = tipoMorador.Proprietário;
+            }else if (_tipoMorador == "Inquilino"){
+                this.tipo_morador = tipoMorador.Inquilino;
+            }else{
+                this.tipo_morador = tipoMorador.Morador;
+            }
+        }
+        public String getTipoMorador(){
+            return this.tipo_morador.toString();
         }
         
 }

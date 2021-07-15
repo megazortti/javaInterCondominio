@@ -8,11 +8,10 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="intercondo.Controllers.Ctrll_CadastroFuncionario">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Ctrll_Porteiro">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#273c75" height="400.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
-      <ListView layoutX="14.0" layoutY="14.0" prefHeight="376.0" prefWidth="294.0" />
+      <ListView fx:id="lista" layoutX="14.0" layoutY="14.0" prefHeight="376.0" prefWidth="294.0" />
       <Label layoutX="379.0" layoutY="26.0" text="Buscar Porteiro" textFill="WHITE">
          <font>
             <Font size="21.0" />
@@ -33,13 +32,13 @@
       <TextField fx:id="nascimento_porteiro" layoutX="456.0" layoutY="207.0" prefHeight="25.0" prefWidth="105.0" />
       <Button fx:id="btnDeletar" defaultButton="true" layoutX="466.0" layoutY="344.0" mnemonicParsing="false" onAction="#Deletar" prefHeight="25.0" prefWidth="87.0" style="-fx-background-color: #2b8eff;" text="Deletar" textFill="WHITE" />
       <Button fx:id="btnCadastrar" defaultButton="true" layoutX="344.0" layoutY="344.0" mnemonicParsing="false" onAction="#Cadastrar" prefHeight="25.0" prefWidth="87.0" style="-fx-background-color: #2b8eff;" text="Cadastrar" textFill="WHITE" />
-      <TextField fx:id="nascimento_porteiro1" layoutX="456.0" layoutY="175.0" prefHeight="25.0" prefWidth="105.0" />
+      <TextField fx:id="nome_porteiro" layoutX="456.0" layoutY="175.0" prefHeight="25.0" prefWidth="105.0" />
       <Label fx:id="nomePorteiro" layoutX="322.0" layoutY="174.0" prefHeight="26.0" prefWidth="98.0" text="NOME" textFill="WHITE">
          <font>
             <Font size="17.0" />
          </font>
       </Label>
-      <TextField fx:id="nascimento_porteiro2" layoutX="456.0" layoutY="143.0" prefHeight="25.0" prefWidth="105.0" />
+      <TextField fx:id="cpf_porteiro" layoutX="456.0" layoutY="143.0" prefHeight="25.0" prefWidth="105.0" />
       <Label fx:id="cpfPorteiro" layoutX="322.0" layoutY="142.0" prefHeight="26.0" prefWidth="98.0" text="CPF" textFill="WHITE">
          <font>
             <Font size="17.0" />
