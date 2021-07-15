@@ -109,10 +109,16 @@ public class Ctrll_MoradorController implements Initializable {
     
     }
     
+    @FXML
+    public void Cadastrar(){
+        System.out.println("BOTAO CADASTRAR PRESSIONADO!");
+    }
+    public void deletar(){
+        System.out.println("BOTAO DELETAR PRESSIONADO!");
+    }
     
     @Override
-    
-    
+
     public void initialize(URL url, ResourceBundle rb) {
        
         Morador morador = new Morador();
