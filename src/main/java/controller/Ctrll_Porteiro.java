@@ -28,7 +28,7 @@ import model.database.ConnectionBD;
 /**
  * FXML Controller class
  *
- * @author biaca
+ * @author Victor
  */
 public class Ctrll_Porteiro implements Initializable {
     ObservableList obsList = FXCollections.observableArrayList();
