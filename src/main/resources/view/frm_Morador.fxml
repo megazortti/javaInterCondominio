@@ -49,5 +49,7 @@
       </Label>
       <TextField fx:id="tipo_morador" editable="false" layoutX="735.0" layoutY="409.0" prefHeight="25.0" prefWidth="115.0" />
       <Button fx:id="btnBuscar" defaultButton="true" layoutX="793.0" layoutY="71.0" mnemonicParsing="false" onAction="#Buscar" prefHeight="25.0" prefWidth="52.0" style="-fx-background-color: #2b8eff;" text="Buscar" textFill="WHITE" />
+      <Button fx:id="btnCadastrar" defaultButton="true" layoutX="586.0" layoutY="535.0" mnemonicParsing="false" onAction="#Cadastrar" prefHeight="25.0" prefWidth="92.0" style="-fx-background-color: #2b8eff;" text="Cadastrar" textFill="WHITE" />
+      <Button fx:id="btnDeletar" defaultButton="true" layoutX="732.0" layoutY="535.0" mnemonicParsing="false" onAction="#deletar" prefHeight="25.0" prefWidth="92.0" style="-fx-background-color: #2b8eff;" text="Deletar" textFill="WHITE" />
    </children>
 </AnchorPane>
